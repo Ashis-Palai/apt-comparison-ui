@@ -76,7 +76,7 @@ const App = () => {
 
   return (
     <div className="p-4 max-w-4xl mx-auto">
-      <h1 className="text-xl font-bold mb-4">APT Group TTPs Analysis</h1>
+      <h1 className="text-xl font-bold mb-4">APT Groups TTPs Analysis</h1>
       {aptGroups.map((group, index) => (
         <input
           key={index}
