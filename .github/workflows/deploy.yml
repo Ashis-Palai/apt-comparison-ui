@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]  # Triggers the workflow on push to main
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -15,7 +15,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'  # Use a Node.js version appropriate for your project
+        node-version: '16'
 
     - name: Install Dependencies
       run: npm install
@@ -23,10 +23,13 @@ jobs:
     - name: Build Project
       run: npm run build
 
+    - name: Configure Git identity
+      run: |
+        git config user.name "Ashis Palai"
+        git config user.email "ashis.palai.learning2022@gmail.com"
+
     - name: Deploy to GitHub Pages
       run: npm run deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-        # GITHUB_TOKEN is automatically available for actions. 
-        # If additional tokens or secrets (such as custom deploy hooks) are needed, add them in the repository secrets.
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
