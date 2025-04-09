@@ -96,7 +96,7 @@ const App = () => {
             <Thead>
               <Tr>
                 <Th>APT Group</Th>
-                <Th>TTP Name</Th>
+                <Th>TTP Names</Th>
                 <Th>TTP ID</Th>
                 <Th>External Link</Th>
               </Tr>
